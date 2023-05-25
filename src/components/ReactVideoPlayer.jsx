@@ -9,6 +9,7 @@ const VideoPlayer = () => {
   const [imageMetaData, setImageMetaData] = useState(null)
   const [videoMetadata, setVideoMetadata] = React.useState(null);
   const [dataLoaded, setDataLoaded] = useState(false)
+  const [videoResolution, setVideoResolution] = useState('');
 //   const [loader, setLoader] = useState(false);
 //   const [fileType, setFileType] = useState("");
 
@@ -84,15 +85,21 @@ const getWidthFromFile = (file, callback) => {
     }));
   };
 
+
   const handleVideoReady = () => {
     const player = document.querySelector('video');
+    const resolution = `${player.videoWidth}x${player.videoHeight}`;
+    setVideoResolution(resolution);
+   
     const hasSound = player.mozHasAudio || Boolean(player.webkitAudioDecodedByteCount) || Boolean(player.audioTracks?.length);
     const { videoWidth, videoHeight } = player;
     const aspectRatio = videoWidth / videoHeight;
     setVideoMetadata((prevMetadata) => ({
       ...prevMetadata,
       hasSound,
+      resolution,
       aspectRatio: aspectRatio.toFixed(2),
+      
     }));
   };
 
@@ -140,6 +147,10 @@ const getWidthFromFile = (file, callback) => {
            <tr>
               <td>Duration</td>
               <td>{videoMetadata.duration} seconds</td>
+            </tr>
+            <tr>
+              <td>Resolution</td>
+              <td>{videoMetadata.resolution}</td>
             </tr>
          
           </tbody>
