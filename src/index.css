@@ -11,10 +11,10 @@ body {
   background-color: white;
   padding: 30px;
   
-  
+  max-width:700px ;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -23,14 +23,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .file-title img{
   padding-right: 10px;
 
 }
-
+.metaData-table-wrapper{
+  width: 100%;
+}
 .metaData-table-wrapper table {
   width: 100%;
   border-collapse: collapse;
@@ -52,7 +54,7 @@ body {
 
 .file-input-preview {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 20px;
   background-color: #D9D9D9;
@@ -91,7 +93,7 @@ body {
 }
 
 .upload-button-wrapper{
-  margin-left: 112px;
+  margin-left: 25px;
 
 }
 .upload-button-wrapper label{

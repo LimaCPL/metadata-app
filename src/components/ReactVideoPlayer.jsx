@@ -106,13 +106,13 @@ const getWidthFromFile = (file, callback) => {
   React.useEffect(() => {
     if (mediaUrl) {
       const videoType = mediaUrl.split('.').pop();
-      setVideoMetadata({ type: videoType });
+      setVideoMetadata({ type: 'video' });
     }
   }, [mediaUrl]);
 
   return (
 
-    <div>
+    <div className='file-upload file-upload-wrapper'>
       {/* <input type="file" onChange={handleFileUpload} /> */}
       {videoMetadata && isVideo && dataLoaded && (
 
@@ -133,23 +133,23 @@ const getWidthFromFile = (file, callback) => {
           <tbody>
          
             <tr>
-              <td>Type</td>
+              <td>形式</td>
               <td>{videoMetadata.type}</td>
             </tr>
             <tr>
-              <td>Has Sound</td>
-              <td>{videoMetadata.hasSound ? 'Yes' : 'No'}</td>
+              <td>オーディオ</td>
+              <td>{videoMetadata.hasSound ? 'あり' : 'いいえ'}</td>
             </tr>
             <tr>
-            <td>Aspect Ratio</td>
+            <td>アスペクト比</td>
              <td>{videoMetadata.aspectRatio}</td>
            </tr>
            <tr>
-              <td>Duration</td>
-              <td>{videoMetadata.duration} seconds</td>
+              <td>再生時間</td>
+              <td>{videoMetadata.duration} 秒</td>
             </tr>
             <tr>
-              <td>Resolution</td>
+              <td>解像度</td>
               <td>{videoMetadata.resolution}</td>
             </tr>
          
@@ -177,16 +177,16 @@ const getWidthFromFile = (file, callback) => {
           <tbody>
          
             <tr>
-              <td>Type</td>
+              <td>形式</td>
               <td>{imageMetaData?.type}</td>
             </tr>
            
             <tr>
-            <td>Aspect Ratio</td>
+            <td>アスペクト比</td>
              <td>{imageMetaData?.aspectRatio}</td>
            </tr>
            <tr>
-            <td>Resolution</td>
+            <td>解像度</td>
              <td>{imageMetaData?.resolution}</td>
            </tr>
           </tbody>
