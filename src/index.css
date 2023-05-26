@@ -10,7 +10,7 @@ body {
 .file-upload-wrapper{
   background-color: white;
   padding: 30px;
-  
+  position: relative;
   max-width:700px ;
   margin: 0 auto;
   display: flex;
@@ -111,7 +111,8 @@ display: none;
   width: 30px;
   height: 30px;
   animation: spin 2s linear infinite;
-  margin-top: 20%;
+  position: absolute;
+ top: 144px;
 }
 @keyframes spin {
   0% { transform: rotate(0deg); }
