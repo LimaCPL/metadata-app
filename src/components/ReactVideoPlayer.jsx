@@ -214,7 +214,7 @@ const VideoPlayer = () => {
           />
         )}
 
-        {!loading && !isVideo && (
+        {!loading && !isVideo && dataLoaded && (
           <img className="previewElement" src={mediaUrl} alt="Preview" />
         )}
         </>
