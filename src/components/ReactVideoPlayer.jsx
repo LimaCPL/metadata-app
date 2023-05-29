@@ -71,8 +71,8 @@ const VideoPlayer = () => {
 
     setTimeout(() => {
     setDataLoaded(true);
-    setMediaUrl(fileUrl);
     setLoading(false);
+    setMediaUrl(fileUrl);
     }, 2000);
   };
 
@@ -115,14 +115,15 @@ const VideoPlayer = () => {
 
   return (
     <div className="file-upload file-upload-wrapper">
-      {!loading && videoMetadata && isVideo && dataLoaded && (
-        <div className="metaData-table-wrapper">
-          <h4 className="file-title">
+        <h4 className="file-title">
             <span>
               <img src="movie-icon.png" alt="icon" />
             </span>
             焼き芋できたて
           </h4>
+      {!loading && videoMetadata && isVideo && dataLoaded && (
+        <div className="metaData-table-wrapper">
+        
           <table>
             <thead>
               <tr>
@@ -157,13 +158,14 @@ const VideoPlayer = () => {
       )}
       {!loading && !isVideo && dataLoaded && (
         <>
-          <div className="metaData-table-wrapper">
-            <h4 className="file-title">
+          <h4 className="file-title">
               <span>
                 <img src="movie-icon.png" />
               </span>
               焼き芋できたて
             </h4>
+          <div className="metaData-table-wrapper">
+          
             <table>
               <thead>
                 <tr>
@@ -197,12 +199,11 @@ const VideoPlayer = () => {
         <div className="file-preview">
 
         {loading ? (
-        <div className="loader">Loading...</div>
+        <div className="loader"></div>
       ) : (
         <>
         {!loading && isVideo &&  (
           <ReactPlayer
-          playing
             url={mediaUrl}
             className="previewElement"
             width="400"
